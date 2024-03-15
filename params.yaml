@@ -1,0 +1,25 @@
+General: 
+  random_state: 42
+  test_size: 0.2
+
+logging_folder_paths:
+  main_log_foldername: Logs
+
+data_location:
+  notebook_data: '../../data_file_path' #s3/url/cloud_storage
+  main_data_folder: artificats
+  raw_data_folder: raw_data
+  raw_data_filename: 'file_path'
+
+  model:
+  params:
+    n_estimators: 500
+    max_depth: 4
+    max_leaves: 2
+    learning_rate: 0.01
+  model_foldername: Models
+  model_name: model.joblib
+metrics_path:
+  metrics_folder: Metrics
+  metrics_file: metrics.json
+  clf_report_filename: classification_report.csv
