@@ -1,25 +1,25 @@
-General: 
+base:
+  project_name: "Thyroid"
+  author: "Harinder Singh Sudwal"
+
+basic:
   random_state: 42
   test_size: 0.2
-
-logging_folder_paths:
-  main_log_foldername: Logs
+  target_column_name: classes
 
 data_location:
-  notebook_data: '../../data_file_path' #s3/url/cloud_storage
-  main_data_folder: artificats
-  raw_data_folder: raw_data
-  raw_data_filename: 'file_path'
+  notebook_data: notebook\thyroid.csv
+  data_artifact: artifacts
+  raw_data_filename: raw.csv
+  preprocess_file: process_clean.csv
+  transformer_file: transformer.csv
 
-  model:
-  params:
-    n_estimators: 500
-    max_depth: 4
-    max_leaves: 2
-    learning_rate: 0.01
-  model_foldername: Models
+  main_model_folder: models
+  main_label_encoder: label_encoder.joblib
   model_name: model.joblib
+  model_name1: model.pkl
+
 metrics_path:
-  metrics_folder: Metrics
+  metrics_folder: metrics
   metrics_file: metrics.json
   clf_report_filename: classification_report.csv
