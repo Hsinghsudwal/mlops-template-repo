@@ -1,6 +1,5 @@
 import yaml
 import os
-import dill
 import pickle
 
 
@@ -10,12 +9,6 @@ class Utility:
         self.params_path = params_path
 
     def create_folder(self, folder_name):
-        """This method is used to create folders that are required.
-
-        Returns
-        --------
-        None
-        """
 
         try:
             # Creating a directory if it does not exist already
@@ -26,7 +19,6 @@ class Utility:
             raise e
         
     def save_model(file_path, obj):
-        """save model to the path folder with name """
         try:
             dir_path = os.path.dirname(file_path)
 
@@ -39,9 +31,7 @@ class Utility:
             raise e
         
     def load_model(file_path):
-        """this will load the model from save path 
-        return : model name
-        """
+
         try:
             with open(file_path, "rb") as file_obj:
              return pickle.load(file_obj)
@@ -50,14 +40,6 @@ class Utility:
             raise e
 
     def read_params(self):
-        """This method is used to read the parameters yaml file.
-
-        Parameters: 
-        
-        config_path: Path to the parameters yaml file
-
-        Returns: the yaml file object.
-        """
 
         try:
             # Reading params yaml file
@@ -69,3 +51,21 @@ class Utility:
 
         else:
             return params
+
+    def read_yaml_file(file_path):
+        try:
+
+            with open(file_path, 'rb') as yaml_file:
+             return yaml.safe_load(yaml_file)
+        
+        except Exception as e:
+         raise e
+
+    def write_yaml_file(file_path, content):
+        try:
+            
+            with open(file_path, "w") as file:
+                yaml.dump(content, file)
+
+        except Exception as e:
+            raise e
